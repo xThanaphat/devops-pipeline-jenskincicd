@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: testing-api
+  name: testing-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testing-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testing-api
+    spec:
+      containers:
+      - image: xThanaphat/testingapi:v0.0.1 # ${USER}/testapi:${VERSION}
+        name: testingapi
+        resources: {}
